@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Easy property bindings using delegates, with the help of Nito.Mvvm.CalculatedProperties.</Description>
+    <TargetFrameworks>netstandard1.0;netstandard2.0;net461</TargetFrameworks>
+    <LangVersion>11.0</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nito.Mvvm.CalculatedProperties" Version="1.*" />
+  </ItemGroup>
+
+</Project>
