@@ -5,7 +5,18 @@
     <TargetFrameworks>netstandard1.0;netstandard2.0;net461</TargetFrameworks>
     <LangVersion>11.0</LangVersion>
     <Nullable>enable</Nullable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/R2D221/DelegateBindings</RepositoryUrl>
+    <Authors>R2D221</Authors>
+    <PackageTags>mvvm;inotifypropertychanged;calculated;properties;bindings</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Nito.Mvvm.CalculatedProperties" Version="1.*" />
