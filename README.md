@@ -1,4 +1,5 @@
 # DelegateBindings
+<a href="https://www.nuget.org/packages/DelegateBindings"><img src="https://img.shields.io/nuget/v/DelegateBindings" /></a>
 
 Easy property bindings using delegates, with the help of
 Nito.Mvvm.CalculatedProperties.
