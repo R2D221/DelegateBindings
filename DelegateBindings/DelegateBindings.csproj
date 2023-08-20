@@ -9,6 +9,7 @@
     <RepositoryUrl>https://github.com/R2D221/DelegateBindings</RepositoryUrl>
     <Authors>R2D221</Authors>
     <PackageTags>mvvm;inotifypropertychanged;calculated;properties;bindings</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
