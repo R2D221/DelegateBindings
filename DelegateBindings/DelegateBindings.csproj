@@ -10,6 +10,7 @@
     <Authors>R2D221</Authors>
     <PackageTags>mvvm;inotifypropertychanged;calculated;properties;bindings</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
