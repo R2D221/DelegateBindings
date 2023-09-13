@@ -9,9 +9,9 @@ namespace DelegateBindings;
 /// An action that will be invoked whenever a property inside it
 /// changes.
 /// </summary>
-public class DelegateBinding : IDisposable
+public sealed class DelegateBinding : IDisposable
 {
-	private static bool isRunning = false;
+	internal static bool isRunning = false;
 	private readonly PropertyHelper properties;
 	private Action? action;
 
@@ -53,7 +53,6 @@ public class DelegateBinding : IDisposable
 		}
 	}
 
-	/// 123456789012345678901234567890123456789012345678901234567890
 	/// <summary>
 	/// Releases the binding so that the action will no longer be
 	/// invoked.
