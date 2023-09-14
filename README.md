@@ -55,6 +55,8 @@ public class ItemViewModel : INotifyPropertyChanged
 }
 ```
 
+### Bind()
+
 Then, it's just as simple as calling the binding like this:
 
 ```csharp
@@ -68,14 +70,38 @@ var binding2 = Bind(() => label2.Text = viewModel.Items.FirstOrDefault()?.Conten
 
 Whenever `viewModel.Text` changes, `label1.Text` will be changed as well.
 
-It also works for observable collections. Whenever the `Items` list is updated, 
+It also works for observable collections. Whenever the `Items` list is updated,
 or the first item's `Content` is updated, `label2.Text` will also change.
+
+### WhenChanged()
+
+Another alternative is to use `WhenChanged()` to subscribe to property changes.
+
+```csharp
+using static DelegateBindings.DelegateBinder;
+
+// ...
+
+var binding3 = WhenChanged(() => viewModel.Text, x => Show(x));
+var binding4 =
+	WhenChanged(() => viewModel.Items.Count)
+	.Subscribe(x => LogCount(x)); // Support for Rx.NET
+
+void Show(string text)
+{
+	MessageBox.Show(text);
+}
+
+void LogCount(int count)
+{
+	Console.WriteLine($"We have {count} elements so far.");
+}
+```
 
 ## Remarks
 
 * The `Bind()` method receives an `Action`, not an `Expression`, which means
-  you're not limited to just assignments. It's recommended that you keep the
-  actions simple tho.
+  you're not limited by the C# features available in expressions.
 * The view models MUST be implemented with Nito.Mvvm.CalculatedProperties. If
   you're using other libraries, the bindings WON'T WORK.
 * Bindings are one-way. I'm planning to add two-way binding in the future but
